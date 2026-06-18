@@ -32,20 +32,7 @@
 </div>
 
 <?php if(isset($_GET["num"])): ?>
-<?php
-    $num = $_GET["num"];
-    $sum = 0;
-    $min = $num * 1;
-    $max = $num * 12;
-    for($i = 1; $i <= 12; $i++) $sum += $num * $i;
-?>
-
-<div class="stats">
-    <div class="stat"><div class="stat-label">เลขแม่</div><div class="stat-val"><?php echo $num; ?></div></div>
-    <div class="stat"><div class="stat-label">ผลรวม</div><div class="stat-val"><?php echo $sum; ?></div></div>
-    <div class="stat"><div class="stat-label">ต่ำสุด</div><div class="stat-val"><?php echo $min; ?></div></div>
-    <div class="stat"><div class="stat-label">สูงสุด</div><div class="stat-val"><?php echo $max; ?></div></div>
-</div>
+<?php $num = $_GET["num"]; ?>
 
 <div class="result-wrap">
     <div class="result-card">
@@ -54,13 +41,8 @@
             <span class="result-head-badge"><?php echo $num; ?></span>
         </div>
         <?php
-            $i = 1;
-            while($i <= 12){
-                echo "<div class='result-row'>";
-                echo "<span class='left'>" . $num . " × " . $i . " =</span>";
-                echo "<span class='right'>" . $num * $i . "</span>";
-                echo "</div>";
-                $i++;
+            for($i = 1; $i <= 12; $i++){
+                echo "<div class='result-row'><span class='left'>$num × $i =</span><span class='right'>" . ($num * $i) . "</span></div>";
             }
         ?>
     </div>
@@ -68,7 +50,7 @@
 
 <?php endif; ?>
 
-<div class="footer">การพัฒนาเว็บแอปพลิเคชัน · BIT.2/4 · 2025</div>
+<div class="footer">การพัฒนาเว็บแอปพลิเคชัน · BIT.2/4 · 2026</div>
 
 </body>
 </html>
